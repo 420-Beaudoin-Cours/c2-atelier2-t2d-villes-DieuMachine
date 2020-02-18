@@ -17,16 +17,22 @@ public class Villes {
 
     public static double moyenneUneLigne(int[][] tab2D, int ligne){
         double moyenne = 0;
-        for (int i = 0; i < tab2D[ligne].length; i++)
-            moyenne += tab2D[ligne][i];
-        return moyenne/ tab2D[ligne].length;
+        if(tab2D[ligne].length > 0) {
+            for (int i = 0; i < tab2D[ligne].length; i++)
+                moyenne += tab2D[ligne][i];
+            moyenne /= tab2D[ligne].length;
+        }
+        return moyenne;
     }
 
     public static double moyenneUneCol(int[][] tab2D, int col){
         double moyenne = 0;
-        for (int i = 0; i < tab2D.length; i++)
-            moyenne += tab2D[i][col];
-        return moyenne/ tab2D.length;
+        if (tab2D.length > 0) {
+            for (int i = 0; i < tab2D.length; i++)
+                moyenne += tab2D[i][col];
+            moyenne /= tab2D.length;
+        }
+        return moyenne;
     }
 
     public static int maxLigne(int[][] tab2D, int ligne){
